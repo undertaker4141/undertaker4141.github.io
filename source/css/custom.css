@@ -1,10 +1,10 @@
 /* 背景效果 */
 .background-effects {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 1;
     pointer-events: none;
 }
@@ -55,6 +55,25 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.65);
     opacity: 1;
     transform: scale(1.1);
+}
+
+/* 首頁橫幅容器 */
+#page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 確保背景圖片覆蓋整個橫幅區域 */
+#page-header.full_page {
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* 調整內容層級 */
+.full_page #site-info {
+    position: relative;
+    z-index: 5;
 }
 
 /* 調整主要內容區域的 z-index */

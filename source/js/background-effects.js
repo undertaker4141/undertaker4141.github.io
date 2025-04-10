@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 只在首頁橫幅存在時添加效果
+    const pageHeader = document.querySelector('#page-header.full_page');
+    if (!pageHeader) return;
+
     // 創建背景效果容器
     const backgroundEffects = document.createElement('div');
     backgroundEffects.className = 'background-effects';
-    document.body.appendChild(backgroundEffects);
+    pageHeader.appendChild(backgroundEffects);
 
     // 創建十字背景
     const backgroundCross = document.createElement('div');
@@ -16,9 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 計算需要的元素數量
     const calculateElements = () => {
-        const elementSize = window.innerWidth * 0.05; // 5vw
-        const columns = Math.ceil(window.innerWidth / elementSize);
-        const rows = Math.ceil(window.innerHeight / elementSize);
+        const headerWidth = pageHeader.offsetWidth;
+        const headerHeight = pageHeader.offsetHeight;
+        const elementSize = headerWidth * 0.05; // 5vw
+        const columns = Math.ceil(headerWidth / elementSize);
+        const rows = Math.ceil(headerHeight / elementSize);
         return { columns, rows, total: columns * rows };
     };
 

@@ -91,7 +91,7 @@ footer_img: false
 
 # 網站背景
 # 可以設置為顏色或圖片 URL
-background: /images/main.jpg
+background: /images/background.png
 
 # 背景效果設置
 background_effects:
@@ -1113,3 +1113,6 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
+
+# 是否顯示首頁全屏圖
+index_fullscreen: true
