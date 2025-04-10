@@ -62,16 +62,16 @@ avatar:
 disable_top_img: false
 
 # 如果頁面橫幅未設置，將顯示 default_top_img
-default_top_img:
+default_top_img: /images/main.jpg
 
 # 首頁橫幅圖片
-index_img:
+index_img: /images/main.jpg
 
 # 歸檔頁面橫幅圖片
-archive_img:
+archive_img: /images/main.jpg
 
 # 注意：標籤頁面，不是標籤列表頁面
-tag_img:
+tag_img: /images/main.jpg
 
 # 標籤頁面的橫幅圖片，你可以為每個標籤設置橫幅圖片
 # 格式：
@@ -79,7 +79,7 @@ tag_img:
 tag_per_img:
 
 # 注意：分類頁面，不是分類列表頁面
-category_img:
+category_img: /images/main.jpg
 
 # 分類頁面的橫幅圖片，你可以為每個分類設置橫幅圖片
 # 格式：
@@ -91,7 +91,16 @@ footer_img: false
 
 # 網站背景
 # 可以設置為顏色或圖片 URL
-background:
+background: /images/main.jpg
+
+# 背景效果設置
+background_effects:
+  enable: true
+  cross: true
+  square: true
+  opacity: 0.1
+  hover_opacity: 1
+  transition: 0.5s
 
 cover:
   # 是否禁用封面
@@ -1027,9 +1036,9 @@ css_prefix: true
 # 在 head（在 '</head>' 標籤之前）和底部（在 '</body>' 標籤之前）插入代碼
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/custom.css">
   bottom:
-    # - <script src="xxxx"></script>
+    - <script src="/js/background-effects.js"></script>
 
 # CDN 設置
 # 除非你知道它們如何工作，否則不要修改以下設置
