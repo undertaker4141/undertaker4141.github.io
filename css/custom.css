@@ -1,0 +1,101 @@
+/* 背景效果 */
+.background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.background-cross {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.background-cross div {
+    background: url('/images/cross.png') no-repeat center center;
+    background-size: cover;
+    width: 5vw;
+    height: 5vw;
+    float: left;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+}
+
+.background-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99; /* 提高方塊層級 */
+    pointer-events: auto;
+}
+
+.background-square div {
+    background: rgba(255, 255, 255, 0.1);
+    width: 5vw;
+    height: 5vw;
+    float: left;
+    transition: all 0.8s ease;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.background-square div:hover {
+    transition: all 0.1ms ease;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.65);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 首頁橫幅容器 */
+#page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 確保背景圖片覆蓋整個橫幅區域 */
+#page-header.full_page {
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* 調整中央標題區域，確保不阻擋方塊效果 */
+.full_page #site-info {
+    position: relative;
+    z-index: 100; /* 比方塊層級高，但不阻擋交互 */
+    pointer-events: none; /* 不捕獲鼠標事件，讓事件透過到下層 */
+}
+
+/* 標題內的按鈕和鏈接需要恢復鼠標事件捕獲 */
+.full_page #site-info a,
+.full_page #site-info .site-title,
+.full_page #site-info .site-subtitle,
+.full_page #site-info .site-button {
+    pointer-events: auto; /* 恢復這些元素的鼠標交互 */
+}
+
+/* 調整主要內容區域的 z-index */
+#content-inner {
+    position: relative;
+    z-index: 101;
+}
+
+/* 確保背景圖片覆蓋整個視窗 */
+.top-img {
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    z-index: 0;
+} 
