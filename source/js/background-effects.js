@@ -45,14 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // 生成方形元素
         for (let i = 0; i < total; i++) {
             const squareDiv = document.createElement('div');
+            // 確保方塊可以捕獲鼠標事件
+            squareDiv.style.pointerEvents = 'auto';
             backgroundSquare.appendChild(squareDiv);
         }
 
         // 調整容器大小以確保完全覆蓋
-        backgroundCross.style.width = `${columns * 5}vw`;
-        backgroundCross.style.height = `${rows * 5}vw`;
-        backgroundSquare.style.width = `${columns * 5}vw`;
-        backgroundSquare.style.height = `${rows * 5}vw`;
+        const elementWidth = 5; // vw
+        backgroundCross.style.width = `${columns * elementWidth}vw`;
+        backgroundCross.style.height = `${rows * elementWidth}vw`;
+        backgroundSquare.style.width = `${columns * elementWidth}vw`;
+        backgroundSquare.style.height = `${rows * elementWidth}vw`;
     };
 
     // 初始生成
@@ -64,4 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(generateElements, 250);
     });
+
+    // 確保 site-info 不阻擋方塊效果
+    const siteInfo = document.querySelector('.full_page #site-info');
+    if (siteInfo) {
+        siteInfo.style.pointerEvents = 'none';
+        
+        // 恢復標題內元素的鼠標事件
+        const interactiveElements = siteInfo.querySelectorAll('a, .site-title, .site-subtitle, .site-button');
+        interactiveElements.forEach(el => {
+            el.style.pointerEvents = 'auto';
+        });
+    }
 }); 

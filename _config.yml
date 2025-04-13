@@ -7,9 +7,9 @@ title: undertaker4141
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: undertaker4141
+language: zh-TW
+timezone: Asia/Taipei
 
 # URL
 ## 在此設置你的網站 URL。例如，如果你使用 GitHub Page，將 url 設置為 'https://username.github.io/project'
@@ -97,6 +97,13 @@ ignore:
 ## 插件：https://hexo.io/plugins/
 ## 主題：https://hexo.io/themes/
 theme: butterfly
+
+# 注入自定義 CSS 和 JavaScript
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    - <script src="/js/background-effects.js"></script>
 
 # 部署
 ## 文檔：https://hexo.io/docs/one-command-deployment
